@@ -25,3 +25,7 @@ First, instead of defining pins manually in the Verilog to be recognized by the 
 format and in this case, it is used to describe signals and their corresponding pins on the ``ULX3S``. This simplifies things a bunch and
 makes it pretty easy to get started. Second, the ``12F`` version of the ``ECP5`` Lattice FPGA has 12K LUTs, not 25K LUTs; at least this is the case at the time that this is written. Finally, when providing the package to ``nextpnr``, check the Lattice website. The package
 I am currently working with is the CABGA381. This is just a description of the packaging of the chip itself, but is still important.
+
+# Communications
+Communications with an external computer are achieved through UART and an FTDI to USB bridge present on the ULX3S. Currently, UART_TX from the ULX3S is implemented, once I get a good enough usecase for this board, I'll implement UART_RX to send data from an external computer.
+Only annoying thing about this was that the output had to be to the FTDI_RX pin (as the FTDI bridge is what is performing the translation). This is also mentioned in the LPF; reading documentation seems to be an important skill. 
