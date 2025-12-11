@@ -3,7 +3,7 @@ PROJ=uart_tx
 all: ${PROJ}.bit
 
 %.json: %.sv
-	~/yosys/yosys -p "read_verilog -sv $<; synth_ecp5 -top uart_tx -json $@" $<
+	~/yosys/yosys -p "read_verilog -sv $< uart_tx.sv; synth_ecp5 -top uart_tx -json $@" $<
 
 %_out.config: %.json
 	~/nextpnr/build/nextpnr-ecp5 --json $< --textcfg $@ --lpf ulx3s_v20.lpf --12k --package CABGA381
