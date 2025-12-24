@@ -15,7 +15,7 @@ module node_top (
    instr_t  dispatched_instr;
 
    assign instr_queue_re = compute_node_req_data;
-   assign instr_queue_we = data_in_valid; 
+   assign instr_queue_we = data_in_valid;
 
    queue #(32, instr_t)  
    instr_queue (.clk(clk),

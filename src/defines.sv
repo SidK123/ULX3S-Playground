@@ -1,8 +1,18 @@
 typedef enum {
    ADD, 
    SUB, 
-   MUL,
-   DIV 
+   EQ,
+   NEQ,
+   SHR,
+   SHL,
+   XOR,
+   AND,
+   OR,
+   NAND,
+   MERGE,
+   SELECT,
+   TILE_MV,
+   REG_MV
 } opcode_t;
 
 typedef logic [31:0] data_t; 
